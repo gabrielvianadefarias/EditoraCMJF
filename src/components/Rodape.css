@@ -1,0 +1,8 @@
+.rodape-container {
+  background-color: #174769; 
+  color: rgba(255, 255, 255, 0.85);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: auto; 
+}

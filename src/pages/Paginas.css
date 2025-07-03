@@ -1,0 +1,103 @@
+.page-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.page-content {
+  max-width: 800px;
+  width: 100%;
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.page-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #303640;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.page-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #343a40;
+  margin-bottom: 1rem;
+}
+
+
+.form-container {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-top: 1px solid #e9ecef;
+  padding-top: 2rem;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #174769;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.form-button {
+  display: block;
+  width: 100%;
+  padding: 0.85rem;
+  background-color: #174769;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #0d304a;
+}
+
+.reviews-container {
+  margin-top: 2rem;
+}
+
+.reviews-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #174769;
+}
+
+.review-card {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-left: 5px solid #174769;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.review-text {
+  font-style: italic;
+  color: #495057;
+  margin: 0;
+}
+
+.review-author {
+  text-align: right;
+  font-weight: 600;
+  color: #343a40;
+  margin-top: 0.5rem;
+}

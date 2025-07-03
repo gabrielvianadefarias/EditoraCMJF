@@ -1,0 +1,77 @@
+.card-livro {
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card-livro:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-livro-imagem-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.imagem-capa {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-livro-conteudo {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.livro-titulo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: #212529;
+}
+
+.livro-autor {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.avaliacao-estrelas {
+  margin-bottom: 1rem;
+}
+
+.estrela {
+  font-size: 1.1rem;
+  color: #adb5bd;
+}
+
+.estrela.preenchida {
+  color: #ffc107;
+}
+
+.botao-download {
+  background-color: #174769;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.botao-download:hover {
+  background-color: #0d304a;
+}
+    
