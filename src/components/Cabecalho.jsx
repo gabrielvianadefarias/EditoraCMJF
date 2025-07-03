@@ -21,7 +21,7 @@ const Cabecalho = ({ termoBusca, setTermoBusca, categoriaSelecionada, setCategor
       expand="lg"
       className="custom-navbar"
       data-bs-theme="dark"
-      style={{ backgroundColor: '#174769' }}
+      style={{ backgroundColor: '#3366B2' }}
     >
       <CContainer fluid>
         <CNavbarBrand as={Link} to="/">EDITORA CMJF</CNavbarBrand>
