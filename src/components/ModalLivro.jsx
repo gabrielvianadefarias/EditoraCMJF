@@ -9,7 +9,7 @@ const ModalLivro = ({ livro, onClose }) => {
         
         <div className="modal-body">
           <div className="modal-imagem-container">
-            <img src={livro.imagemCapa} alt={`Capa do livro ${livro.titulo}`} />
+            <img src={livro.capa} alt={`Capa do livro ${livro.titulo}`} />
           </div>
           <div className="modal-info-container">
             <h2 className="modal-titulo">{livro.titulo}</h2>
@@ -22,7 +22,12 @@ const ModalLivro = ({ livro, onClose }) => {
             </div>
             
             <p className="modal-sinopse-titulo">Sinopse</p>
-            <p className="modal-sinopse">{livro.sinopse}</p>
+            
+            <div 
+            className="modal-sinopse" 
+            dangerouslySetInnerHTML={{ __html: livro.sinopse }} 
+            />
+            {/* <p className="modal-sinopse">{livro.sinopse}</p> */}
 
             <a href={livro.urlPdf} download target="_blank" rel="noopener noreferrer" className="modal-botao-download">
               Baixar PDF
