@@ -21,17 +21,26 @@
   overflow-y: auto;
   position: relative;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-sizing: border-box;
 }
 
 .modal-close-button {
   position: absolute;
   top: 15px;
   right: 20px;
+  z-index: 10;
   background: none;
   border: none;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #aaa;
   cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.modal-close-button:hover {
+  color: #333;
 }
 
 .modal-body {
@@ -46,7 +55,9 @@
 
 .modal-imagem-container img {
   width: 100%;
+  height: auto;
   border-radius: 8px;
+  display: block;
 }
 
 .modal-info-container {
@@ -57,19 +68,21 @@
   font-size: 2rem;
   font-weight: 700;
   color: #174769;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
 }
 
 .modal-autor {
   font-size: 1.25rem;
   font-weight: 400;
   color: #6c757d;
-  margin-top: 0.25rem;
+  margin-top: 0;
   margin-bottom: 1.5rem;
 }
 
 .modal-detalhes-tecnicos {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   font-size: 0.9rem;
   color: #495057;
@@ -116,5 +129,11 @@
     width: 100%;
     max-width: 200px;
     margin: 0 auto 1.5rem auto;
+  }
+  .modal-content {
+    padding: 1.5rem;
+  }
+  .modal-titulo {
+    font-size: 1.5rem;
   }
 }
