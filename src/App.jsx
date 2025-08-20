@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Cabecalho from './components/Cabecalho';
+import SubHeader from './components/SubHeader'; 
 import Rodape from './components/Rodape';
 import HomePage from './pages/HomePage';
 import SobrePage from './pages/SobrePage';
@@ -9,7 +10,7 @@ import AvaliacoesPage from './pages/AvaliacoesPage';
 
 function App() {
   const [termoBusca, setTermoBusca] = useState('');
-  const [categoriaSelecionada, setCategoriaSelecionada] = useState(''); 
+  const [categoriaSelecionada, setCategoriaSelecionada] = useState('');
 
   return (
     <div className="app-container">
@@ -19,6 +20,7 @@ function App() {
         categoriaSelecionada={categoriaSelecionada}
         setCategoriaSelecionada={setCategoriaSelecionada}
       />
+      <SubHeader /> 
       <main className="main-content">
         <Routes>
           <Route 
@@ -26,6 +28,7 @@ function App() {
             element={<HomePage termoBusca={termoBusca} categoriaSelecionada={categoriaSelecionada} />} 
           />
           <Route path="/sobre" element={<SobrePage />} />
+          <Route path="/avaliacoes" element={<AvaliacoesPage />} />
         </Routes>
       </main>
       <Rodape />

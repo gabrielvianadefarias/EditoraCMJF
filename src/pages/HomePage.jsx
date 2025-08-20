@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CardLivro from '../components/CardLivro';
 import ModalLivro from '../components/ModalLivro';
+import SecaoNoticias from '../components/SecaoNoticias';
 
 const HomePage = ({ termoBusca, categoriaSelecionada }) => {
   const [livros, setLivros] = useState([]);
@@ -9,22 +10,15 @@ const HomePage = ({ termoBusca, categoriaSelecionada }) => {
   useEffect(() => {
     const fetchLivros = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/livros');
-        
-        if (!response.ok) {
-          throw new Error('Erro na resposta do servidor');
-        }
-
+        const response = await fetch('http://localhost:3001/api/livros'); 
         const data = await response.json();
-        setLivros(data); 
-
+        setLivros(data);
       } catch (error) {
-        console.error("Falha ao buscar os livros:", error);
+        console.error("Erro ao buscar livros:", error);
       }
     };
-
-    fetchLivros(); 
-  }, []); 
+    fetchLivros();
+  }, []);
 
   const livrosFiltrados = livros
     .filter(livro => !categoriaSelecionada || livro.categoria === categoriaSelecionada)
@@ -35,8 +29,10 @@ const HomePage = ({ termoBusca, categoriaSelecionada }) => {
 
   return (
     <>
+      <SecaoNoticias />
+
       <div className="section-header">
-        <h1>Novidades</h1>
+        <h1>Publicações</h1>
         <p>Explore nossa coleção de livros gratuitos.</p>
       </div>
       <div className="book-list-container">
