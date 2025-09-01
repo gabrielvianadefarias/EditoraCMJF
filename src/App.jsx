@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import Cabecalho from './components/Cabecalho';
 import SubHeader from './components/SubHeader'; 
-import Banner from './components/Banner'; // 1. Importe o Banner
+import Banner from './components/Banner'; 
 import Rodape from './components/Rodape';
 import HomePage from './pages/HomePage';
 import SobrePage from './pages/SobrePage';
@@ -22,7 +22,7 @@ function App() {
         setCategoriaSelecionada={setCategoriaSelecionada}
       />
       <SubHeader /> 
-      <Banner /> {/* 2. Adicione o Banner aqui */}
+      <Banner /> 
       <main className="main-content">
         <Routes>
           <Route 
