@@ -25,7 +25,7 @@ const Cabecalho = ({ termoBusca, setTermoBusca, categoriaSelecionada, setCategor
     >
       <CContainer fluid>
         <CNavbarBrand as={Link} to="/">
-          EDITORA CÂMARA JF
+          <img src="/images/logoeditora.png" alt="Logo Editora Câmara JF" className="navbar-logo" />
         </CNavbarBrand>
         <CNavbarToggler
           aria-label="Toggle navigation"
