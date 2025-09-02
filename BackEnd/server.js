@@ -52,6 +52,37 @@ app.get('/api/livros', async (req, res) => {
   }
 });
 
+app.get('/api/noticias', async (req, res) => {
+  try {
+
+    const connection = await mysql.createConnection(dbConfig);
+    
+
+    const sql = `
+      SELECT 
+        id,
+        titulo
+      FROM 
+        mdl_noticias 
+      WHERE 
+        id <= 26 limit 3`;
+
+
+    const [rows] = await connection.execute(sql);
+    
+
+    await connection.end();
+
+
+    res.json(rows);
+
+  } catch (error) {
+
+    console.error('Erro ao buscar dados do banco:', error);
+    res.status(500).json({ message: 'Erro interno no servidor' });
+  }
+});
+
 
 const PORT = 3001; 
 app.listen(PORT, () => {
