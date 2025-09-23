@@ -7,7 +7,7 @@ const SecaoNoticias = () => {
   useEffect(() => {
     const fetchNoticias = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/noticias');
+        const response = await fetch('http://192.168.0.250:3001/api/noticias');
         const data = await response.json();
         setNoticias(data);
       } catch (error) {
@@ -23,7 +23,7 @@ const SecaoNoticias = () => {
       <div className="noticias-grid">
         {noticias.map(noticia => (
           <div key={noticia.id} className="noticia-card">
-            <img src={noticia.urlimagem} alt={noticia.titulo} className="noticia-imagem" />
+            <img src={'https://www.camarajf.mg.gov.br/www/conteudo/anexo/' + noticia.filename} alt={noticia.titulo} className="noticia-imagem" />
             <div className="noticia-conteudo">
               <h3 className="noticia-titulo">{noticia.titulo}</h3>
               <p className="noticia-descricao">{noticia.subtitulo}</p>

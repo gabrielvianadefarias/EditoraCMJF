@@ -60,12 +60,16 @@ app.get('/api/noticias', async (req, res) => {
 
     const sql = `
       SELECT 
-        id,
-        titulo
-      FROM 
-        mdl_noticias 
-      WHERE 
-        id <= 26 limit 3`;
+        n.id,
+        n.titulo,
+        (select a.filename from mdl_anexo a 
+          where a.objeto_id = n.id
+          and a.objeto_chave = 'capa'
+          and a.tipo = 'FOTO'
+          and a.objeto_pai = 'Noticia' limit 1) as filename
+      FROM mdl_noticias n
+      order BY n.id desc
+      limit 3`;
 
 
     const [rows] = await connection.execute(sql);
@@ -86,5 +90,5 @@ app.get('/api/noticias', async (req, res) => {
 
 const PORT = 3001; 
 app.listen(PORT, () => {
-  console.log(`Servidor backend rodando na porta http://localhost:${PORT}`);
+  console.log('Servidor backend rodando na porta http://localhost:${PORT}');
 });
