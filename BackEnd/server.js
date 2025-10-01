@@ -52,7 +52,7 @@ app.get('/api/livros', async (req, res) => {
   }
 });
 
-app.get('/api/noticias', async (req, res) => {
+app.get('/api/noticiashome', async (req, res) => {
   try {
 
     const connection = await mysql.createConnection(dbConfig);
@@ -68,8 +68,46 @@ app.get('/api/noticias', async (req, res) => {
           and a.tipo = 'FOTO'
           and a.objeto_pai = 'Noticia' limit 1) as filename
       FROM mdl_noticias n
+      WHERE n.editora = 's'
       order BY n.id desc
       limit 3`;
+
+
+    const [rows] = await connection.execute(sql);
+    
+
+    await connection.end();
+
+
+    res.json(rows);
+
+  } catch (error) {
+
+    console.error('Erro ao buscar dados do banco:', error);
+    res.status(500).json({ message: 'Erro interno no servidor' });
+  }
+});
+
+app.get('/api/noticias', async (req, res) => {
+  try {
+
+    const connection = await mysql.createConnection(dbConfig);
+    
+
+    const sql = `
+      SELECT 
+        n.id,
+        n.titulo,
+        n.texto,
+        n.data,
+        (select a.filename from mdl_anexo a 
+          where a.objeto_id = n.id
+          and a.objeto_chave = 'capa'
+          and a.tipo = 'FOTO'
+          and a.objeto_pai = 'Noticia' limit 1) as filename
+      FROM mdl_noticias n
+      where n.editora = 's'
+      order BY n.id desc`;
 
 
     const [rows] = await connection.execute(sql);
